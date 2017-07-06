@@ -11,4 +11,4 @@ Development environment for the BEAM modeling framework.
 
 Run this from the directory of the Beam project you want to build.
 
-`docker run --rm -v "$PWD":/home/dev --name beam-dev zishanbilal/beam-dev gradle wrapper && ./gradlew <gradle-task>`
+`docker run --rm -v "$PWD":/home/dev --name beam-dev zishanbilal/beam-dev gradle <gradle-task>`
