@@ -43,6 +43,8 @@ RUN set -o errexit -o nounset \
 # Create Gradle volume
 USER dev
 VOLUME "/home/dev/.gradle"
+VOLUME "/home/dev"
+
 WORKDIR /home/dev
 
 RUN set -o errexit -o nounset \
