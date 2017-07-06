@@ -34,16 +34,16 @@ RUN set -o errexit -o nounset \
 	\
 	&& apk del .build-deps \
 	\
-	&& echo "Adding gradle user and group" \
-	&& addgroup -S -g 1000 gradle \
-	&& adduser -D -S -G gradle -u 1000 -s /bin/ash gradle \
-	&& mkdir /home/gradle/.gradle \
-	&& chown -R gradle:gradle /home/gradle
+	&& echo "Adding dev user and group" \
+	&& addgroup -S -g 1000 dev \
+	&& adduser -D -S -G dev -u 1000 -s /bin/ash dev \
+	&& mkdir /home/dev/.gradle \
+	&& chown -R dev:dev /home/dev
 
 # Create Gradle volume
-USER gradle
-VOLUME "/home/gradle/.gradle"
-WORKDIR /home/gradle
+USER dev
+VOLUME "/home/dev/.gradle"
+WORKDIR /home/dev
 
 RUN set -o errexit -o nounset \
 	&& echo "Testing Gradle installation" \
