@@ -8,7 +8,7 @@ Beam development environments.
 
 Run this from the directory of the Gradle project you want to build.
 
-`docker run --rm -v "$PWD":/project -w /project --name gradle gradle:latest gradle <gradle-task>`
+`docker run --rm -v "$PWD":/project -w /project --name beam-dev zishanbilal/beam-dev gradle <gradle-task>`
 
 ### Instructions for a new Gradle release
 
