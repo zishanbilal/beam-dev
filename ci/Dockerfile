@@ -13,6 +13,7 @@ RUN \
   echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-java-trusty.list
 RUN \
+  apt-get install -y curl && \
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update && \
   apt-get install -y git-lfs=2.3.4 && \
