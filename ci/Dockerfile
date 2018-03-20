@@ -8,6 +8,11 @@
 # Pull base image.
 FROM ubuntu
 
+
+# Remove any existing JDKs
+RUN apt-get --purge remove openjdk*
+
+
 # Install git and git-lfs.
 RUN \
   apt-get update && \
@@ -36,6 +41,7 @@ WORKDIR /data
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV GIT_LFS_SKIP_SMUDGE 1
 
 # Define default command.
 CMD ["bash"]
